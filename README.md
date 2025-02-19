@@ -22,17 +22,18 @@
 	sudo apt install php libapache2-mod-php
 
 3. Install composer
+   
 	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 	php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
 	php composer-setup.php
 	php -r "unlink('composer-setup.php');"
 	sudo mv composer.phar /usr/local/bin/composer
 
-4. Install MySQL
+5. Install MySQL
 
 	sudo apt install mysql-server
 
-5. Install phpMyAdmin
+6. Install phpMyAdmin
 	
 	sudo apt install phpmyadmin
 
@@ -42,17 +43,17 @@
 
 	database: sipteco
 
-6. Install gh
+7. Install gh
 
 	sudo apt install gh
 
-7. Clone project
+8. Clone project
 	
 	git clone https://github.com/rtk-teh/sipteco.git
 
-8. Change dbusername and password in .env
+9. Change dbusername and password in .env
 
-9. Install npm
+10. Install npm
 
 	sudo apt install npm
 
@@ -75,14 +76,9 @@
 	<IfModule mod_rewrite.c>
 		Options +FollowSymLinks
 		RewriteEngine On
-
 		RewriteCond %{REQUEST_URI} !^/public/
-
 		RewriteCond %{REQUEST_FILENAME} !-d
 		RewriteCond %{REQUEST_FILENAME} !-f
-
-
-
 		RewriteRule ^(.*)$ /public/$1
 		#RewriteRule ^ index.php [L]
 		RewriteRule ^(/)?$ public/index.php [L]
