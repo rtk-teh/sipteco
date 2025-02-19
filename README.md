@@ -1,2 +1,2 @@
-# siptico
+# sipteco
  
